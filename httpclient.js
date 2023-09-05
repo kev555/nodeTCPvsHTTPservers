@@ -10,7 +10,11 @@
 
 const options = {
     hostname: 'nodetcpvshttpservers.onrender.com',
-    port: 10000,
+
+    hostname: '0.0.0.0',
+    
+    port: 3001, // interestingly dont even need to specify 443 when using 'node:https'
+    
     // path: '/',
     // method: 'GET',
     // headers: {
@@ -45,6 +49,7 @@ req.on('response', res1 => {
     });
     
     res1.on('end', () => {
+        console.log("enddddddddddddd")
         console.log(data.toString())
     });
 });
